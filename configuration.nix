@@ -2,17 +2,18 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, flake-self, ... }:
 let
-	user = "matthiasw";
+  user = "matthiasw";
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      
+
     ];
- 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -50,7 +51,7 @@ in
 
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.plasma5.enable = true;
-  services.displayManager.sddm.enable  = true;
+  services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -86,17 +87,19 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner"];
+    extraGroups = [ "networkmanager" "wheel" "video" "audio" "lp" "scanner" ];
     packages = with pkgs; [
-   	#thunderbird
+      #thunderbird
     ];
   };
-	
 
+  home-manager.users.${user} = flake-self.homeConfigurations.desktop;
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "matthiasw";
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "matthiasw";
+  };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -151,12 +154,12 @@ in
   #enables flakes and experimental features
   #weekly garbage collector to remove old stores
   nix = {
-	settings = { 
-		auto-optimise-store = true;
-		allowed-users = ["matthiasw"];
-		experimental-features = [ "nix-command" "flakes" ];
-	};
-	gc = {automatic = true; dates = "weekly"; options = "--delete-older-than 30d";};
+    settings = {
+      auto-optimise-store = true;
+      allowed-users = [ "matthiasw" ];
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 30d"; };
   };
 
 }
