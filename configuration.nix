@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, flake-self, ... }:
 let
   user = "matthiasw";
 in
@@ -93,10 +93,10 @@ in
     ];
   };
 
-
+  home-manager.users.${user} = flake-self.homeConfigurations.desktop;
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
+  services. displayManager. autoLogin. enable = true;
   services.displayManager.autoLogin.user = "matthiasw";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229

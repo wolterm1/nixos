@@ -39,25 +39,18 @@
           # allows to only pass what is needed to each module.
           specialArgs = { flake-self = self; } // inputs;
           modules = [
+            home-manager.nixosModules.home-manager
             ./configuration.nix
+            { home-manager.useUserPackages = true; }
           ];
         };
       };
 
-      # hmConfig = {
-      #   matthiasw = home-manager.lib.homeManagerConfiguration {
-      #     pkgs = nixpkgs.legacyPackages.${system};
-      #     modules = [
-      #       ./home.nix
-      #       {
-      #         home = {
-      #           username = "matthiasw";
-      #           homeDirectory = "/home/matthiasw";
-      #           stateVersion = "24.05";
-      #         };
-      #       }
-      #     ];
-      #   };
-      # };
+      homeConfigurations = {
+        desktop = { pkgs, lib, ... }: {
+          imports = [ ./home-manager/default.nix ];
+        };
+      };
+
     };
 }
