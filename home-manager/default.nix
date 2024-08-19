@@ -6,7 +6,9 @@ with lib; {
     home.packages = with pkgs; [
       nixpkgs-fmt
     ];
+	
 
+    
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -17,7 +19,9 @@ with lib; {
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
-
+	
+    home.homeDirectory = "/home/matthiasw";
+    home.username = "matthiasw";
     home.stateVersion = "24.05";
 
   };
