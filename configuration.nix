@@ -96,8 +96,10 @@ in
   home-manager.users.${user} = flake-self.homeConfigurations.desktop;
 
   # Enable automatic login for the user.
-  services. displayManager. autoLogin. enable = true;
-  services.displayManager.autoLogin.user = "matthiasw";
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "matthiasw";
+  };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
