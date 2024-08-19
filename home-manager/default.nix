@@ -1,14 +1,20 @@
 { lib, pkgs, ... }:
-with lib; {
-  config = {
+{
+  imports = [
+ 	./config/git.nix
+  ];
 
     # Install these packages for my user
-    home.packages = with pkgs; [
-      nixpkgs-fmt
+  home.packages = with pkgs; [
+    kitty
+    git
+    nixpkgs-fmt
+    vscode
+    google-chrome
+    neofetch
     ];
-	
-
-    
+ 
+ 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -23,6 +29,4 @@ with lib; {
     home.homeDirectory = "/home/matthiasw";
     home.username = "matthiasw";
     home.stateVersion = "24.05";
-
-  };
 }

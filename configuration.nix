@@ -47,17 +47,23 @@ in
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
+  services.xserver= {
+    enable = true;
+  };
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.plasma5.enable = true;
   services.displayManager.sddm.enable = true;
+  #programs.hyprland.enable = true;  
+
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
+  services.xserver = { 
+    xkb = {
+      layout = "de";
+      variant = "";
+    };
   };
+
 
   # Configure console keymap
   console.keyMap = "de";
@@ -117,9 +123,10 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    waybar
+    htop
     wget
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
