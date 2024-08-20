@@ -123,7 +123,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    waybar
+    libsForQt5.bismuth
     htop
     wget
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
