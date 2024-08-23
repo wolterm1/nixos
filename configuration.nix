@@ -45,7 +45,10 @@ in
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
+  
 
+
+  services.libinput.touchpad.naturalScrolling = true;
   # Enable the X11 windowing system.
   services.xserver= {
     enable = true;
@@ -126,20 +129,30 @@ in
     zsh
     htop
     wget
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
+    libsForQt5.bismuth
   ];
   
   programs.zsh = {
     enable = true;
-    #enableCompletion = true; 
-    #shellAliases = {
-    #  ll = "ls -l";
-    #  upd = "sudo nixos-rebuild switch --flake .#matthiasw";
-    #  c = "clear";
-    #  config = "cd ~/Repos";
-    #};
-    #shellInit = "neofetch";    
-
+    enableCompletion = true; 
+    syntaxHighlighting.enable = true; 
+    shellAliases = {
+      ll = "ls -l";
+      upd = "sudo nixos-rebuild switch --flake .#matthiasw";
+      c = "clear";
+      config = "cd ~/Repos";
+      project = "cd ~/Coding_Projects";
+      nf = "neofetch";
+      
+    };
+    shellInit = "neofetch"; 
+    
+    ohMyZsh = {
+      enable = true;
+      theme = "eastwood";
+      plugins = ["git" "dircycle"];
+    };
   };
   users.defaultUserShell = pkgs.zsh;
 
@@ -167,7 +180,7 @@ in
       allowed-users = [ "matthiasw" ];
       experimental-features = [ "nix-command" "flakes" ];
     };
-    gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 30d"; };
+    gc = { automatic = true; dates = "weekly"; options = "--delete-older-than 7d"; };
   };
 
 }

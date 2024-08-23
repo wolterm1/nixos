@@ -1,8 +1,8 @@
-{ lib, pkgs, config, modulesPath,  ... }:
+{ lib, pkgs,  ... }:
 {
   imports = [
  	./config/git.nix
-        ./config/zsh.nix
+	./config/kitty.nix
   ];
 
     # Install these packages for my user
@@ -11,10 +11,8 @@
     git
     nixpkgs-fmt
     vscode
-    google-chrome
+    google-chrome	
     neofetch
-
-    zsh
     ];
  
  
