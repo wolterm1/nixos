@@ -1,7 +1,8 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, modulesPath,  ... }:
 {
   imports = [
  	./config/git.nix
+        ./config/zsh.nix
   ];
 
     # Install these packages for my user
@@ -12,6 +13,8 @@
     vscode
     google-chrome
     neofetch
+
+    zsh
     ];
  
  
