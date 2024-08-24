@@ -56,7 +56,7 @@ in
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.plasma5.enable = true;
   services.displayManager.sddm.enable = true;
-  #programs.hyprland.enable = true;  
+  #services.xserver.desktopManager.gnome.enable = true; 
 
 
   # Configure keymap in X11

@@ -3,6 +3,7 @@
   imports = [
  	./config/git.nix
 	./config/kitty.nix
+	./config/chromium.nix
   ];
 
     # Install these packages for my user
@@ -10,9 +11,9 @@
     kitty
     git
     nixpkgs-fmt
-    vscode
-    google-chrome	
+    vscode	
     neofetch
+    chromium
     ];
  
  
