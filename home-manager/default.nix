@@ -15,7 +15,11 @@
     neofetch
     chromium
     ];
- 
+  
+
+  home.sessionVariables = {
+    TERMINAL = "kitty";
+  }; 
  
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;

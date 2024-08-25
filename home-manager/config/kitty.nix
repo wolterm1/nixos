@@ -11,6 +11,7 @@
     settings = {
       enable_audio_bell = false;
       copy_on_select = true;
+      confirm_os_window_close = 0;
     };
 
 

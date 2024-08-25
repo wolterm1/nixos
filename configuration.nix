@@ -117,8 +117,6 @@ in
 
   systemd.services."autovt@tty1".enable = false;
 
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -133,6 +131,9 @@ in
     libsForQt5.bismuth
   ];
   
+
+
+
   programs.zsh = {
     enable = true;
     enableCompletion = true; 
@@ -144,6 +145,9 @@ in
       config = "cd ~/Repos";
       project = "cd ~/Coding_Projects";
       nf = "neofetch";
+      cnf = "clear; neofect";
+      chrome = "nohup chromium >/dev/null 2>&1 & disown";
+      kit = "nohup kitty >/dev/null 2>&1 &disown";
       
     };
     shellInit = "neofetch"; 
@@ -155,6 +159,9 @@ in
     };
   };
   users.defaultUserShell = pkgs.zsh;
+
+
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
