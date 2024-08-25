@@ -145,7 +145,7 @@ in
       config = "cd ~/Repos";
       project = "cd ~/Coding_Projects";
       nf = "neofetch";
-      cnf = "clear; neofect";
+      cnf = "clear; neofetch";
       chrome = "nohup chromium >/dev/null 2>&1 & disown";
       kit = "nohup kitty >/dev/null 2>&1 &disown";
       
