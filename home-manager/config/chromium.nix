@@ -1,9 +1,9 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
-    extensions  = [
-      {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} 
+    extensions = [
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
     ];
   };
 }

@@ -1,19 +1,18 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   programs.kitty = {
     enable = true;
-    theme = "Desert";
-    shellIntegration.enableZshIntegration = true; 
-    font  = {
-      name  = "JetBrains Mono";
-      size = 14.0;
+    theme = "Dark One Nuanced";
+    shellIntegration.enableZshIntegration = true;
+    font = {
+      name = "Jetbrains Mono";
+      size = 11.5;
     };
     settings = {
       enable_audio_bell = false;
       copy_on_select = true;
-      confirm_os_window_close = 0;
+      confirm_os_window_close = 0;   
     };
-
 
   };
 }

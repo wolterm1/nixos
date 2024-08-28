@@ -18,7 +18,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "my-nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -45,12 +45,12 @@ in
     LC_TELEPHONE = "de_DE.UTF-8";
     LC_TIME = "de_DE.UTF-8";
   };
-  
+
 
 
   services.libinput.touchpad.naturalScrolling = true;
   # Enable the X11 windowing system.
-  services.xserver= {
+  services.xserver = {
     enable = true;
   };
   # Enable the GNOME Desktop Environment.
@@ -60,7 +60,7 @@ in
 
 
   # Configure keymap in X11
-  services.xserver = { 
+  services.xserver = {
     xkb = {
       layout = "de";
       variant = "";
@@ -129,33 +129,35 @@ in
     wget
     vim
     libsForQt5.bismuth
+    openvpn
   ];
-  
+
 
 
 
   programs.zsh = {
     enable = true;
-    enableCompletion = true; 
-    syntaxHighlighting.enable = true; 
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       ll = "ls -l";
       upd = "sudo nixos-rebuild switch --flake .#matthiasw";
       c = "clear";
       config = "cd ~/Repos";
       project = "cd ~/Coding_Projects";
-      nf = "neofetch";
-      cnf = "clear; neofetch";
+      nf = "fastfetch";
+      cnf = "clear; fastfetch";
       chrome = "nohup chromium >/dev/null 2>&1 & disown";
       kit = "nohup kitty >/dev/null 2>&1 &disown";
-      
+      infovpn = "nmcli connection up openvpn_wolterm1_tcp"; 
+
     };
-    shellInit = "neofetch"; 
-    
+    shellInit = "fastfetch";
+
     ohMyZsh = {
       enable = true;
       theme = "eastwood";
-      plugins = ["git" "dircycle"];
+      plugins = [ "git" "dircycle" ];
     };
   };
   users.defaultUserShell = pkgs.zsh;
