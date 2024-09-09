@@ -149,8 +149,10 @@ in
       cnf = "clear; fastfetch";
       chrome = "nohup chromium >/dev/null 2>&1 & disown";
       kit = "nohup kitty >/dev/null 2>&1 &disown";
-      infovpn = "nmcli connection up openvpn_wolterm1_tcp"; 
-
+      vpnUp = "nmcli connection up openvpn_wolterm1_tcp";
+      vpnDown = "nmcli connection down openvpn_wolterm1_tcp";
+      eduroamcs = "nmcli connection up eduroam-cs"; 
+      nigger = "./home/matthiasw/Coding_Projects/scripts/ascii_bobo.sh
     };
     shellInit = "fastfetch";
 

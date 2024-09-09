@@ -5,7 +5,6 @@
     ./config/kitty.nix
     ./config/chromium.nix
     ./config/fastfetch.nix
-    ./config/vscode.nix
   ];
 
   # Install these packages for my user
