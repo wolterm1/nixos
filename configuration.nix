@@ -152,7 +152,7 @@ in
       vpnUp = "nmcli connection up openvpn_wolterm1_tcp";
       vpnDown = "nmcli connection down openvpn_wolterm1_tcp";
       eduroamcs = "nmcli connection up eduroam-cs"; 
-      nigger = "./home/matthiasw/Coding_Projects/scripts/ascii_bobo.sh
+      nigger = "~/Coding_Projects/scripts/ascii_bobo.sh";
     };
     shellInit = "fastfetch";
 
