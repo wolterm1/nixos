@@ -5,7 +5,7 @@
     ./config/kitty.nix
     ./config/chromium.nix
     ./config/fastfetch.nix
-    ./config/spotify.nix
+    #./config/spotify.nix
   ];
 
   # Install these packages for my user
@@ -16,7 +16,7 @@
     vscode
     chromium
     fastfetch
-    spotify
+    spotify-player
   ];
 
 

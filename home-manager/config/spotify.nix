@@ -1,6 +1,6 @@
-{config, pkgs}:
+{ config, pkgs, ... }:
 {
-  programs.spotiy = {
+  programs.spotify-player = {
     enable = true;
   };
 }
