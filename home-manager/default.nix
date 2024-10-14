@@ -17,6 +17,7 @@
     chromium
     fastfetch
     spotify-player
+    neovim
   ];
 
 

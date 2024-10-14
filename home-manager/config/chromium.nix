@@ -4,6 +4,7 @@
     enable = true;
     extensions = [
       { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
+      { id = "kiokdhlcmjagacmcgoikapbjmmhfchbi"; }
     ];
   };
 }

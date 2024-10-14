@@ -17,10 +17,11 @@
       kit = "nohup kitty >/dev/null 2>&1 &disown";
       vpnUp = "nmcli connection up openvpn_wolterm1_tcp";
       vpnDown = "nmcli connection down openvpn_wolterm1_tcp";
-      eduroamcs = "nmcli connection up eduroam-cs"; 
+      eduroamcs = "nmcli connection up eduroam-cs";
+      eduroam = "nmcli connection up eduroam";
       nigger = "~/Coding_Projects/scripts/ascii_bobo.sh";
     };
-    shellInit = "fastfetch";
+    #shellInit = "fastfetch";
 
     ohMyZsh = {
       enable = true;

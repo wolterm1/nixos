@@ -57,8 +57,9 @@ in
   # Enable the GNOME Desktop Environment.
   services.xserver.desktopManager.plasma5.enable = true;
   services.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true; 
-
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  
 
   # Configure keymap in X11
   services.xserver = {
@@ -131,7 +132,6 @@ in
     vim
     libsForQt5.bismuth
     openvpn
-    spotify
   ];
 
 
