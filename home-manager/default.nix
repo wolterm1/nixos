@@ -5,6 +5,7 @@
     ./config/kitty.nix
     ./config/chromium.nix
     ./config/fastfetch.nix
+    ./config/rofi.nix
     #./config/spotify.nix
   ];
 
@@ -18,6 +19,7 @@
     fastfetch
     spotify-player
     neovim
+    rofi
   ];
 
 

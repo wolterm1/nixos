@@ -1,6 +1,6 @@
-{ inputs, pkgs, config, flake-self, ... } :
+{ inputs, pkgs, config, flake-self, ... }:
 {
-    programs.zsh = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
