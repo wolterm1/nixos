@@ -13,7 +13,9 @@
     settings = {
       enable_audio_bell = false;
       copy_on_select = true;
-      confirm_os_window_close = 0;   
+      confirm_os_window_close = 0;  
+      background_opacity = "0.6";
+      background_blur = "1";
     };
     
     keybindings = {
