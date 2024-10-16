@@ -11,7 +11,7 @@ in
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./config_extra/zsh.nix
+      ./extra_config/zsh.nix
 
     ];
 
