@@ -32,13 +32,14 @@
 
   # Include man-pages
   manual.manpages.enable = true;
-
+  
   programs.command-not-found.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
+  
   home.homeDirectory = "/home/matthiasw";
   home.username = "matthiasw";
   home.stateVersion = "24.05";
+
 }
