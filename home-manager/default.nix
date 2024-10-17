@@ -7,6 +7,7 @@
     ./config/fastfetch.nix
     ./config/wofi.nix
     #./config/spotify.nix
+    ./config/hyprland.nix
   ];
 
   # Install these packages for my user
