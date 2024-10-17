@@ -51,7 +51,6 @@ in
 
   
   #to configure sway in home-manager for systemwide privilege
-  security.polkit.enable = true;
 
 
  # services.xserver = {
