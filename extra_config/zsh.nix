@@ -21,11 +21,11 @@
       eduroam = "nmcli connection up eduroam";
       nigger = "~/Coding_Projects/scripts/ascii_bobo.sh";
     };
-    #shellInit = "fastfetch";
+    #shellInit = "agnoster";
 
     ohMyZsh = {
       enable = true;
-      theme = "eastwood";
+      theme = "tonotdo";
       plugins = [ "git" "dircycle" ];
     };
   };

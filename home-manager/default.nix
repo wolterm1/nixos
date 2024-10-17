@@ -5,7 +5,7 @@
     ./config/kitty.nix
     ./config/chromium.nix
     ./config/fastfetch.nix
-    ./config/rofi.nix
+    ./config/wofi.nix
     #./config/spotify.nix
   ];
 
@@ -18,7 +18,7 @@
     chromium
     fastfetch
     neovim
-    rofi
+    wofi   
     btop 
   ];
 
