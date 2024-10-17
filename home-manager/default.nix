@@ -17,9 +17,9 @@
     vscode
     chromium
     fastfetch
-    spotify-player
     neovim
     rofi
+    btop 
   ];
 
 

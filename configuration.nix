@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, flake-self,  ... }:
+{ inputs, config, pkgs,  ... }:
 let
   user = "matthiasw";
 in
@@ -21,9 +21,6 @@ in
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking = {
@@ -50,7 +47,6 @@ in
   };
 
   
-  #to configure sway in home-manager for systemwide privilege
 
 
  # services.xserver = {
@@ -118,7 +114,7 @@ in
 
 
   #home-manager user from the flake
-  home-manager.users.${user} = flake-self.homeConfigurations.desktop;
+  #home-manager.users.${user} = flake-self.homeConfigurations.desktop;
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin = {
@@ -134,31 +130,17 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     zsh
-    htop
     wget
     vim
     openvpn
+    git
   ];
 
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
 
 
-  #enables flakes and experimental features
-  #weekly garbage collector to remove old stores
   nix = {
     settings = {
       auto-optimise-store = true;
