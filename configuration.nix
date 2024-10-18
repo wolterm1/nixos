@@ -12,7 +12,7 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./extra_config/zsh.nix
-
+      ./extra_config/sound.nix
     ];
 
   # Bootloader.
@@ -59,6 +59,10 @@ in
   
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true; 
+
+  
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   hardware = {
     bluetooth = {
@@ -133,7 +137,11 @@ in
     vim
     openvpn
     git
-  ];
+    libnotify
+    pipewire
+];
+  
+
 
 
   system.stateVersion = "24.05"; # Did you read the comment?

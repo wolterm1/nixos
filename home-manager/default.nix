@@ -7,8 +7,9 @@
     ./config/fastfetch.nix
     ./config/wofi.nix
     #./config/spotify.nix
-    ./config/hyprland.nix
-  ];
+    #./config/hyprland.nix
+    ./config/dunst.nix 
+ ];
 
   # Install these packages for my user
   home.packages = with pkgs; [
@@ -21,7 +22,8 @@
     neovim
     wofi   
     btop 
-  ];
+    dunst
+];
 
 
   home.sessionVariables = {
