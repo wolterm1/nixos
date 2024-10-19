@@ -7,7 +7,7 @@
     ./config/fastfetch.nix
     ./config/wofi.nix
     #./config/spotify.nix
-    #./config/hyprland.nix
+    ./config/hyprland.nix
     ./config/dunst.nix 
  ];
 
@@ -20,7 +20,8 @@
     chromium
     fastfetch
     neovim
-    wofi   
+    wofi  
+    rofi
     btop 
     dunst
 ];

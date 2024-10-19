@@ -10,9 +10,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "github:hyprwm/Hyprland";
+    
+
   };
 
-  outputs = { self, ... }@inputs:
+  outputs = { self, home-manager,  ... }@inputs:
     with inputs;
     {
 
@@ -23,7 +26,7 @@
       # nix build .#nixosConfigurations."matthiasw".config.system.build.toplevel
       nixosConfigurations = {
         matthiasw = nixpkgs.lib.nixosSystem {
-          modules = [
+	  modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager
 	    {
@@ -34,5 +37,21 @@
 	  ];
         };
       };
+
+      homeConfigurations."matthiasw@nixos" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+	{
+          wayland.windowManager.hyprland = {
+            enable = true;
+            # set the flake package
+            package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+          };
+        }
+        # ...
+        ];
+      };
+
+
     };
 }
