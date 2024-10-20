@@ -9,7 +9,7 @@
       ll = "ls -l";
       upd = "sudo nixos-rebuild switch --flake .#matthiasw";
       c = "clear";
-      config = "cd ~/Repos";
+      cdnix = "cd ~/system_config/nixos";
       project = "cd ~/Coding_Projects";
       nf = "fastfetch";
       cnf = "clear; fastfetch";

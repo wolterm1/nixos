@@ -48,11 +48,8 @@ in
 
   
 
-
- # services.xserver = {
- #   enable = false;
- #   desktopManager.plasma5.enable = false;
- # };
+  services.xserver.enable = true;
+  services.desktopManager.plasma6.enable = false;
 		 
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
