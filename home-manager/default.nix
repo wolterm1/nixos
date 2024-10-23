@@ -9,7 +9,7 @@
     #./config/spotify.nix
     ./config/hyprland.nix
     ./config/dunst.nix
-    ./config/waybar/default.nix
+    ./config/waybar.nix
     ./config/fzf/default.nix
     ./config/fonts/default.nix
  ];
