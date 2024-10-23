@@ -15,7 +15,7 @@
       cnf = "clear; fastfetch";
       chrome = "nohup chromium >/dev/null 2>&1 & disown";
       kit = "nohup kitty >/dev/null 2>&1 & disown";
-      vpnUp = "nmcli connection up openvpn_wolterm1_tcp";
+      vpnUp = "nmcli connection up openvpn_wolterm1_tcp --ask";
       vpnDown = "nmcli connection down openvpn_wolterm1_tcp";
       eduroamcs = "nmcli connection up eduroam-cs";
       eduroam = "nmcli connection up eduroam";

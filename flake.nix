@@ -18,9 +18,6 @@
     with inputs;
     {
 
-      # 'nix fmt'
-      formatter = forAllSystems
-        (system: nixpkgsFor.${system}.nixpkgs-fmt);
 
       # nix build .#nixosConfigurations."matthiasw".config.system.build.toplevel
       nixosConfigurations = {

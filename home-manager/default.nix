@@ -8,7 +8,10 @@
     ./config/wofi.nix
     #./config/spotify.nix
     ./config/hyprland.nix
-    ./config/dunst.nix 
+    ./config/dunst.nix
+    ./config/waybar/default.nix
+    ./config/fzf/default.nix
+    ./config/fonts/default.nix
  ];
 
   # Install these packages for my user
@@ -23,7 +26,12 @@
     wofi  
     rofi
     btop 
+    firefox
     dunst
+    waybar
+    fzf
+    fontconfig
+    sioyek
 ];
 
 
